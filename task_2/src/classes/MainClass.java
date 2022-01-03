@@ -15,37 +15,37 @@ import javax.swing.JTextField;
 public class MainClass {
 
 	public static void main(String[] args) {
-		// Создание окна
+		// РЎРѕР·РґР°РЅРёРµ РѕРєРЅР°
 		JFrame frame = new JFrame();
 		frame.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 		
-		// Создание окна для ошибок
-		JFrame errorFrame = new JFrame("Ошибка");
+		// РЎРѕР·РґР°РЅРёРµ РѕРєРЅР° РґР»СЏ РѕС€РёР±РѕРє
+		JFrame errorFrame = new JFrame("РћС€РёР±РєР°");
 		errorFrame.setLayout(new FlowLayout(FlowLayout.CENTER));
 		errorFrame.setSize(300, 100);
 		errorFrame.setLocation(600, 300);
-		errorFrame.add(new JLabel("Проверьте корректность введенных данных!"));
+		errorFrame.add(new JLabel("РџСЂРѕРІРµСЂСЊС‚Рµ РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ РІРІРµРґРµРЅРЅС‹С… РґР°РЅРЅС‹С…!"));
 		
-		// Создание кнопки
-		JButton button = new JButton("Рассчитать");
+		// РЎРѕР·РґР°РЅРёРµ РєРЅРѕРїРєРё
+		JButton button = new JButton("Р Р°СЃСЃС‡РёС‚Р°С‚СЊ");
 		button.setPreferredSize(new Dimension(150, 25));
 		
 		final JLabel profitField = new JLabel("0,00");
 		
-		// Создание текстовых полей
-		final JTextField amountField = new JTextField(""); // сумма вклада
+		// РЎРѕР·РґР°РЅРёРµ С‚РµРєСЃС‚РѕРІС‹С… РїРѕР»РµР№
+		final JTextField amountField = new JTextField(""); // СЃСѓРјРјР° РІРєР»Р°РґР°
 		amountField.setPreferredSize(new Dimension(150, 25));
-		final JTextField percentageField = new JTextField(""); // процент по вкладу
+		final JTextField percentageField = new JTextField(""); // РїСЂРѕС†РµРЅС‚ РїРѕ РІРєР»Р°РґСѓ
 		percentageField.setPreferredSize(new Dimension(75, 25));
-		final JTextField countField = new JTextField(""); // срок по вкладу
+		final JTextField countField = new JTextField(""); // СЃСЂРѕРє РїРѕ РІРєР»Р°РґСѓ
 		countField.setPreferredSize(new Dimension(75, 25));
 		
-		// Создание флажка
-		final JCheckBox сompoundInterestCheckBox = new JCheckBox("Сложный процент");
-		сompoundInterestCheckBox.requestFocusInWindow();
+		// РЎРѕР·РґР°РЅРёРµ С„Р»Р°Р¶РєР°
+		final JCheckBox СЃompoundInterestCheckBox = new JCheckBox("РЎР»РѕР¶РЅС‹Р№ РїСЂРѕС†РµРЅС‚");
+		СЃompoundInterestCheckBox.requestFocusInWindow();
 		
-		// Создание выпадающего списка
-		final JComboBox<String> termComboBox = new JComboBox<String>(new String[] {"месяцев", "лет"});
+		// РЎРѕР·РґР°РЅРёРµ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР°
+		final JComboBox<String> termComboBox = new JComboBox<String>(new String[] {"РјРµСЃСЏС†РµРІ", "Р»РµС‚"});
 		
 		button.addActionListener(new ActionListener() {
 			@Override
@@ -57,16 +57,16 @@ public class MainClass {
 					float term = Float.parseFloat(countField.getText());
 					float profit = 0;
 				
-					if (termComboBox.getSelectedItem().equals("месяцев")) {
-						if (сompoundInterestCheckBox.isSelected()) {
+					if (termComboBox.getSelectedItem().equals("РјРµСЃСЏС†РµРІ")) {
+						if (СЃompoundInterestCheckBox.isSelected()) {
 							profit = ((float)Math.pow((1+percentage/(100*12)), term)-1)*amount;
 						}
 						else {
 							profit = amount*percentage*(term*30)/(365*100);
 						}
 					}
-					if (termComboBox.getSelectedItem().equals("лет")) {
-						if (сompoundInterestCheckBox.isSelected()) {
+					if (termComboBox.getSelectedItem().equals("Р»РµС‚")) {
+						if (СЃompoundInterestCheckBox.isSelected()) {
 							profit = ((float)Math.pow((1+percentage/(100*12)), (term*12))-1)*amount;
 						}
 						else {
@@ -80,25 +80,25 @@ public class MainClass {
 			}
 		});
 
-        frame.add(new JLabel("Сумма вклада"));
+        frame.add(new JLabel("РЎСѓРјРјР° РІРєР»Р°РґР°"));
         frame.add(amountField);
-        frame.add(new JLabel("руб."));
-        frame.add(new JLabel("Процент"));
+        frame.add(new JLabel("СЂСѓР±."));
+        frame.add(new JLabel("РџСЂРѕС†РµРЅС‚"));
 		frame.add(percentageField);
 		frame.add(new JLabel("%"));
-		frame.add(сompoundInterestCheckBox);
-		frame.add(new JLabel("Срок"));
+		frame.add(СЃompoundInterestCheckBox);
+		frame.add(new JLabel("РЎСЂРѕРє"));
 		frame.add(countField);
 		frame.add(termComboBox);
 		frame.add(button);
-		frame.add(new JLabel("Доход:"));
+		frame.add(new JLabel("Р”РѕС…РѕРґ:"));
 		frame.add(profitField);
-		frame.add(new JLabel("руб."));
+		frame.add(new JLabel("СЂСѓР±."));
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1100, 100);
 		frame.setLocation(200, 300);
-		frame.setTitle("Расчет дохода по вкладу");
+		frame.setTitle("Р Р°СЃС‡РµС‚ РґРѕС…РѕРґР° РїРѕ РІРєР»Р°РґСѓ");
 		frame.setVisible(true);
 		
 	}

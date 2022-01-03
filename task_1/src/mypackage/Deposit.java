@@ -5,11 +5,11 @@ import java.io.PrintStream;
 import java.util.*;
 
 public class Deposit {
-	String name; 		// имя
-	String surname; 	// фамилия
-	int id; 			// номер счета
-	double amount; 		// размер депозита
-	double percentage; 	// процент
+	String name; 		// РёРјСЏ
+	String surname; 	// С„Р°РјРёР»РёСЏ
+	int id; 			// РЅРѕРјРµСЂ СЃС‡РµС‚Р°
+	double amount; 		// СЂР°Р·РјРµСЂ РґРµРїРѕР·РёС‚Р°
+	double percentage; 	// РїСЂРѕС†РµРЅС‚
 	
 	public Deposit(String name, String surname, int id, double amount, double percentage) {
 		this.name=name;
@@ -27,7 +27,7 @@ public class Deposit {
 		stream.printf("%15s %15s %04d %10.2f %5.2f\n", name, surname, id, amount, percentage);
 	}
 	
-	// Сортировка массива deposits (пузырьковая)
+	// РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° deposits (РїСѓР·С‹СЂСЊРєРѕРІР°СЏ)
 	static void Sort (Deposit[] deposits, Comparator<Deposit> comparator) {
 		
 		 for (int i = 0; i < deposits.length; i++)
@@ -47,25 +47,25 @@ public class Deposit {
 	}
 	
 	public static void main(String[] args) {
-		// Массив объектов класса Deposit
+		// РњР°СЃСЃРёРІ РѕР±СЉРµРєС‚РѕРІ РєР»Р°СЃСЃР° Deposit
 		Deposit deposits[] = new Deposit[14];
 		
-		 deposits[0] = new Deposit("Андрей", "Романович", 7895, 10000, 5.5);
-		 deposits[1] = new Deposit("Лена", "Елисеева", 123, 50000, 6.5);
-		 deposits[2] = new Deposit("Коля", "Романов", 1234, 50000, 6.5);
-		 deposits[3] = new Deposit("Вика", "Игнатова", 2345, 150000, 4.5);
-		 deposits[4] = new Deposit("Денис", "Козлов", 3456, 10000, 6.5);
-		 deposits[5] = new Deposit("Максим", "Масленников", 1234, 50000, 3.5);
-		 deposits[6] = new Deposit("Роман", "Баранов", 4567, 500000, 3.4);
-		 deposits[7] = new Deposit("Валерий", "Пяткина", 5678, 1250000, 6.7);
-		 deposits[8] = new Deposit("Олеся", "Остапенко", 6789, 20000, 2.5);
-		 deposits[9] = new Deposit("Костя", "Гурко", 7890, 55000, 7.5);
-		 deposits[10] = new Deposit("Сережа", "Наумов", 7891, 120000, 2.52);
-		 deposits[11] = new Deposit("Саша", "Потапов", 7892, 11000, 3.51);
-		 deposits[12] = new Deposit("Рома", "Остапенко", 7893, 1000, 1.5);
-		 deposits[13] = new Deposit("Алена", "Елисеева", 7894, 15000, 0.5);
+		 deposits[0] = new Deposit("РђРЅРґСЂРµР№", "Р РѕРјР°РЅРѕРІРёС‡", 7895, 10000, 5.5);
+		 deposits[1] = new Deposit("Р›РµРЅР°", "Р•Р»РёСЃРµРµРІР°", 123, 50000, 6.5);
+		 deposits[2] = new Deposit("РљРѕР»СЏ", "Р РѕРјР°РЅРѕРІ", 1234, 50000, 6.5);
+		 deposits[3] = new Deposit("Р’РёРєР°", "РРіРЅР°С‚РѕРІР°", 2345, 150000, 4.5);
+		 deposits[4] = new Deposit("Р”РµРЅРёСЃ", "РљРѕР·Р»РѕРІ", 3456, 10000, 6.5);
+		 deposits[5] = new Deposit("РњР°РєСЃРёРј", "РњР°СЃР»РµРЅРЅРёРєРѕРІ", 1234, 50000, 3.5);
+		 deposits[6] = new Deposit("Р РѕРјР°РЅ", "Р‘Р°СЂР°РЅРѕРІ", 4567, 500000, 3.4);
+		 deposits[7] = new Deposit("Р’Р°Р»РµСЂРёР№", "РџСЏС‚РєРёРЅР°", 5678, 1250000, 6.7);
+		 deposits[8] = new Deposit("РћР»РµСЃСЏ", "РћСЃС‚Р°РїРµРЅРєРѕ", 6789, 20000, 2.5);
+		 deposits[9] = new Deposit("РљРѕСЃС‚СЏ", "Р“СѓСЂРєРѕ", 7890, 55000, 7.5);
+		 deposits[10] = new Deposit("РЎРµСЂРµР¶Р°", "РќР°СѓРјРѕРІ", 7891, 120000, 2.52);
+		 deposits[11] = new Deposit("РЎР°С€Р°", "РџРѕС‚Р°РїРѕРІ", 7892, 11000, 3.51);
+		 deposits[12] = new Deposit("Р РѕРјР°", "РћСЃС‚Р°РїРµРЅРєРѕ", 7893, 1000, 1.5);
+		 deposits[13] = new Deposit("РђР»РµРЅР°", "Р•Р»РёСЃРµРµРІР°", 7894, 15000, 0.5);
 	
-		 // Сортировка массива по номеру счета
+		 // РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° РїРѕ РЅРѕРјРµСЂСѓ СЃС‡РµС‚Р°
 		 Sort(deposits, new Comparator<Deposit>() {
 		        @Override
 		        public int compare(Deposit o1, Deposit o2) {
@@ -73,13 +73,13 @@ public class Deposit {
 		        }
 		    });
 		 
-		// Вывод отсортированного массива в консоль
+		// Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 		 for (Deposit deposit: deposits) {
 			 deposit.print();
 		 }
 		 System.out.printf("\n");
 		 
-		// Сортировка массива по размеру вклада
+		// РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° РїРѕ СЂР°Р·РјРµСЂСѓ РІРєР»Р°РґР°
 				 Sort(deposits, new Comparator<Deposit>() {
 				        @Override
 				        public int compare(Deposit o1, Deposit o2) {
@@ -87,13 +87,13 @@ public class Deposit {
 				        }
 				    });
 		 
-		// Вывод отсортированного массива в консоль
+		// Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 		 for (Deposit deposit: deposits) {
 			 deposit.print();
 		 }
 		 System.out.printf("\n");
 		 
-		// Сортировка массива по проценту вклада
+		// РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° РїРѕ РїСЂРѕС†РµРЅС‚Сѓ РІРєР»Р°РґР°
 		 Sort(deposits, new Comparator<Deposit>() {
 		        @Override
 		        public int compare(Deposit o1, Deposit o2) {
@@ -101,13 +101,13 @@ public class Deposit {
 		        }
 		    });
 		 
-		 // Вывод отсортированного массива в консоль
+		 // Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 		 for (Deposit deposit: deposits) {
 			 deposit.print();
 		 }
 		 System.out.printf("\n");
 		 
-		// Сортировка массива по фамилии
+		// РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° РїРѕ С„Р°РјРёР»РёРё
 		 Sort(deposits, new Comparator<Deposit>() {
 		        @Override
 		        public int compare(Deposit o1, Deposit o2) {
@@ -115,12 +115,12 @@ public class Deposit {
 		        }
 		    });
 		 
-		// Вывод отсортированного массива в консоль
+		// Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 		 for (Deposit deposit: deposits) {
 			 deposit.print();
 		 }
 		 
-		 // Запись отсортированного массива в файл data.txt
+		 // Р—Р°РїРёСЃСЊ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ С„Р°Р№Р» data.txt
 		 try {
 			 PrintStream out = new PrintStream(new File("D:/data.txt"));
 			 for (Deposit deposit: deposits)
